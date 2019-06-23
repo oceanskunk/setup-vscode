@@ -72,7 +72,7 @@ On the next screen enter the following configuration:
 * Host = "OCSKUNKS.oceanusergroup.org"  
 * Root = "/home/%%IBM i Profile%%"  
 * Username = "%%IBM i Profile%%"  
-* Private key = "c:\Users\%%Windows Username%%\.ssh\id_rsa-ocean-ssh"  
+* Private key = "c:\Users\\%%Windows Username%%\\.ssh\id_rsa-ocean-ssh"  
 Press Save button
 
 Press Ctrl+Shift+E to open the Explorer pane.  
