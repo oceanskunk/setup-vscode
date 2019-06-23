@@ -35,10 +35,17 @@ This should print something like `c/Users/YourWindowsUsername`
 Enter the following command to generate an SSH key:  
 `$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-ocean-ssh`  
 Press Enter twice to leave the passphrase blank  
+> `ssh-keygen` is the command to run (generate key) 
+> `-t rsa` specifies the type of key to create  
+> `-b 4096` specifies the number of bits in the key  
+> `-f ~/.ssh/id_rsa-ocean-ssh` specifies the filename of the key  
 
 Enter the following command to copy your public key to the OC Skunks IBM i:  
 `$ ssh-copy-id -i ~/.ssh/id_rsa-ocean-ssh %%IBM i Profile%%@OCSKUNKS.oceanusergroup.org`  
 When prompted, enter your IBM i password.  
+> `ssh-copy-id` is the command to run (copy id)  
+> `-i ~/.ssh/id_rsa-ocean-ssh` specifies the identity file  
+> `profile@OCSKUNKS.oceanusergroup.org` is the remote server
 
 #### Test the SSH connection
 Enter the following command to create an SSH connection to the OC Skunks IBM i:  
