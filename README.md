@@ -35,7 +35,7 @@ This should print something like `c/Users/YourWindowsUsername`
 Enter the following command to generate an SSH key:  
 `$ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-ocean-ssh`  
 Press Enter twice to leave the passphrase blank  
-> `ssh-keygen` is the command to run (generate key) 
+> `ssh-keygen` is the command to run (generate key)  
 > `-t rsa` specifies the type of key to create  
 > `-b 4096` specifies the number of bits in the key  
 > `-f ~/.ssh/id_rsa-ocean-ssh` specifies the filename of the key  
