@@ -45,7 +45,7 @@ Enter the following command to copy your public key to the OC Skunks IBM i:
 When prompted, enter your IBM i password.  
 > `ssh-copy-id` is the command to run (copy id)  
 > `-i ~/.ssh/id_rsa-ocean-ssh` specifies the identity file  
-> `profile@OCSKUNKS.oceanusergroup.org` is the remote server
+> `profile@OCSKUNKS.oceanusergroup.org` is the user and remote server
 
 #### Test the SSH connection
 Enter the following command to create an SSH connection to the OC Skunks IBM i:  
