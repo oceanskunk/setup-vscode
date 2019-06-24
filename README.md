@@ -22,7 +22,9 @@ Press F1 to open the command prompt (displays at the top of the screen).
 Type "Terminal: Select Default Shell" in the search bar and press Enter.  
 Select "Git Bash" from the drop-down list.  
 
-### Add SSH keys to IBM i
+## Setting up SSH
+
+### Generate local SSH key
 Press Ctrl+\` to open the terminal inside Visual Studio Code (displays at the bottom of the screen).  
 > The \` should be the key above the Tab key
 
@@ -40,6 +42,7 @@ Press Enter twice to leave the passphrase blank
 > `-b 4096` specifies the number of bits in the key  
 > `-f ~/.ssh/id_rsa-ocean-ssh` specifies the filename of the key  
 
+### Copy your public SSH key to IBM i
 Enter the following command to copy your public key to the OC Skunks IBM i:  
 `$ ssh-copy-id -i ~/.ssh/id_rsa-ocean-ssh %%IBM i Profile%%@OCSKUNKS.oceanusergroup.org`  
 When prompted, enter your IBM i password.  
@@ -47,14 +50,16 @@ When prompted, enter your IBM i password.
 > `-i ~/.ssh/id_rsa-ocean-ssh` specifies the identity file  
 > `profile@OCSKUNKS.oceanusergroup.org` is the user and remote server
 
-#### Test the SSH connection
+### Test the SSH connection
 Enter the following command to create an SSH connection to the OC Skunks IBM i:  
 `$ ssh %%IBM i User%%@OCSKUNKS.oceanusergroup.org -i ~/.ssh/id_rsa-ocean-ssh`  
 You should see a "bash-4.4$" prompt.  
 `$ exit` will disconnect the connection.  
 
 
-### Download the SSH FS extension
+## Editing remote source files
+
+### Download/Configure the SSH FS extension
 Press Ctrl+Shift+X to open the Extensions pane (or click the icon in left-hand menu).  
 Type "SSH FS" in the search box.  
 Press Install for SSH FS extension.  
@@ -75,7 +80,17 @@ On the next screen enter the following configuration:
 * Private key = "c:\Users\\%%Windows Username%%\\.ssh\id_rsa-ocean-ssh"  
 Press Save button
 
+### Open/Edit remote files
 Press Ctrl+Shift+E to open the Explorer pane.  
 Open the SSH FILE SYSTEMS group at the bottom.  
 Right-Click on the "OCEAN Skunks /home" connection.  
 Select "Connect as Workspace folder".  
+
+
+## Troubleshooting
+If you are having issues (i.e. SSH is still asking for a password) check the file permissions:
+chmod 755 ~
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/authorized_keys
