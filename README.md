@@ -3,6 +3,7 @@ How to set up Visual Studio Code locally and connect to remote system
 
 ## Prerequisites
 * Get your IBM i credentials from Yoda
+* Follow the instructions to set up ACS
 
 ## Installs
 Install the following on your Windows computer:
