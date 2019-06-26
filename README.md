@@ -101,9 +101,9 @@ Select "Connect as Workspace folder".
 
 
 ## Troubleshooting
-If you are having issues (i.e. SSH is still asking for a password) check the file permissions:
-chmod 755 ~
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa.pub
-chmod 600 ~/.ssh/authorized_keys
+If you are having issues (i.e. SSH is still asking for a password) check the file permissions:  
+chmod 755 ~  
+chmod 700 ~/.ssh  
+chmod 600 ~/.ssh/id_rsa  
+chmod 600 ~/.ssh/id_rsa.pub  
+chmod 600 ~/.ssh/authorized_keys  
