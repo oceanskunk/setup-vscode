@@ -58,6 +58,7 @@ When prompted, enter your IBM i password.
 You can use ACS to copy your public key to IBM i.  
 Open System Configurations, highlight your system, and press Edit.  
 Select the SSH Key setup tab, and press the "Copy SSH key(s) to server" button.  
+Select the id_rsa-ocean-ssh.pub file.  
 
 #### Other
 Use RDi, nano, or some other editor to add the public key to the authorized_keys file on the server. 
