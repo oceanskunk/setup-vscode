@@ -72,6 +72,7 @@
         > `-t ed25519` specifies the type of key to create  
         > `-f ~/.ssh/id_ed25519` specifies the filename of the generated key  
 
+   ⚠️ Note: If you don't already have a `.ssh` folder, you may have to create one.
 
 ### Copy your public SSH key to IBM i  
 ⚠️ Be sure you copy your ***public*** key (should end with `.pub`)  
