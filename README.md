@@ -61,9 +61,19 @@
     `cat .ssh/id_ed25519.pub`  
 
 
-    You need to generate a key if you see an error like this:  
+    If you see this error, you will need to generate a key:  
     `cat: .ssh/id_ed25519.pub: No such file or directory`  
 
+    * Change directory into the .ssh folder with the following command:
+    `cd .ssh`
+
+    ⚠️ If you see this error, you will need to create the .ssh directory:
+    `cd: .ssh: No such file or directory`
+        * Create the .ssh directory:
+        `mkdir .ssh`
+        * Then change directory into the .ssh folder:
+        `cd .ssh`
+      
     * Enter the following command to generate an SSH key:  
     `ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519`   
     Press Enter twice to leave the passphrase blank  
@@ -71,8 +81,6 @@
         > `ssh-keygen` is the command to run (generate key)  
         > `-t ed25519` specifies the type of key to create  
         > `-f ~/.ssh/id_ed25519` specifies the filename of the generated key  
-
-   ⚠️ Note: If you don't already have a `.ssh` folder, you may have to create one.
 
 ### Copy your public SSH key to IBM i  
 ⚠️ Be sure you copy your ***public*** key (should end with `.pub`)  
@@ -87,7 +95,7 @@ Select the `id_ed25519.pub` key
 #### Using SQL  
 
 Copy the public key to your clipboard:  
-* Run the `cat .ssh/id_ed25519.pub` command to view the public key  
+* Run the `cat ~/.ssh/id_ed25519.pub` command to view the public key  
 Copy the public key to your clipboard  
 
 Use SQL to add the public key
@@ -97,7 +105,7 @@ CALL QSYS2.IFS_WRITE_UTF8(
     PATH_NAME =>'/home/{IBM i Profile}/.ssh/authorized_keys',
     LINE => '{public_key_from_clipboard}',
     OVERWRITE => 'APPEND',
-    END_OF_LINE => 'NONE'
+    END_OF_LINE => 'LF'
 );
 ```
 ⚠️ Be sure to change `{IBM i Profile}` to *your* user profile.  
